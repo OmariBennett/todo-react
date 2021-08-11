@@ -19,6 +19,7 @@ export default class TodoItem extends Component {
 						onChange={this.props.toggleComplete.bind(this, id)}
 					/>
 					{title}
+					<button onClick={this.props.removeTodo.bind(this, id)}>Remove</button>
 				</p>
 			</div>
 		);
