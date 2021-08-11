@@ -1,66 +1,21 @@
 import React, { Component } from 'react';
-import Todos from './components/todo/Todos';
-import AddTodo from './components/todo/AddTodo';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import About from './components/pages/About';
 import Header from './components/layout/Header';
-import { v4 as uuid } from 'uuid';
+import TodoAppRouter from './components/todoRouter/Index';
+// import TodoApp from './components/todo/Index';
 
 export default class App extends Component {
-	state = {
-		todos: [
-			{
-				id: uuid(),
-				title: 'Take out the trash',
-				completed: false,
-			},
-			{
-				id: uuid(),
-				title: 'Dinner with wife',
-				completed: false,
-			},
-			{
-				id: uuid(),
-				title: 'Meeting with boss',
-				completed: false,
-			},
-		],
-	};
-
-	toggleComplete = (id) => {
-		this.setState({
-			todos: this.state.todos.map((todo) => {
-				if (todo.id === id) todo.completed = !todo.completed;
-				return todo;
-			}),
-		});
-	};
-
-	addTodo = (title) => {
-		const newTodo = {
-			id: uuid(),
-			title,
-			completed: false,
-		};
-
-		this.setState({ todos: [...this.state.todos, newTodo] });
-	};
-
-	removeTodo = (id) => {
-		this.setState({
-			todos: [...this.state.todos.filter((todo) => todo.id !== id)],
-		});
-	};
-
 	render() {
 		return (
-			<div>
-				<Header />
-				<AddTodo addTodo={this.addTodo} />
-				<Todos
-					todos={this.state.todos}
-					toggleComplete={this.toggleComplete}
-					removeTodo={this.removeTodo}
-				/>
-			</div>
+			<Router>
+				<div>
+					<Header />
+					{/* <Route exact path='/' component={TodoApp} /> */}
+					<Route exact path='/' component={TodoAppRouter} />
+					<Route path='/about' component={About} />
+				</div>
+			</Router>
 		);
 	}
 }
