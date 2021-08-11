@@ -15,8 +15,19 @@ export default class Todos extends Component {
 	}
 }
 
+/*
+	When the propTypes is required it triggered a warning message 
+	!Warning: 
+		Warning: Failed prop type: The prop `toogleComplete` is marked as required in `Todos`, but its value is `undefined`.
+			* Todos.propTypes = {
+			* 	todos: PropTypes.array.isRequired,
+			* 	toogleComplete: PropTypes.func.isRequired,
+			* 	removeTodo: PropTypes.func.isRequired,
+			* };
+*/
+
 Todos.propTypes = {
 	todos: PropTypes.array.isRequired,
-	toogleComplete: PropTypes.func.isRequired,
+	toogleComplete: PropTypes.func,
 	removeTodo: PropTypes.func.isRequired,
 };

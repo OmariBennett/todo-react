@@ -53,6 +53,7 @@ export default class TodoApp extends Component {
 		return (
 			<div>
 				<React.Fragment>
+					<h2>Todolist with setState...</h2>
 					<AddTodo addTodo={this.addTodo} />
 					<Todos
 						todos={this.state.todos}

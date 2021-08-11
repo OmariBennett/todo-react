@@ -22,12 +22,15 @@ function TodoForm({ addTodo }) {
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<input
-				type='text'
-				value={value}
-				placeholder='Add todo...'
-				onChange={(e) => setValue(e.target.value)}
-			/>
+			<label>
+				Add todo:{' '}
+				<input
+					type='text'
+					value={value}
+					placeholder='Add todo...'
+					onChange={(e) => setValue(e.target.value)}
+				/>
+			</label>
 		</form>
 	);
 }
@@ -67,6 +70,7 @@ export default function TodoAppHooks() {
 
 	return (
 		<div>
+			<h2>Todolist with React hooks...</h2>
 			{todos.map((todo, index) => (
 				<Todo
 					key={index}

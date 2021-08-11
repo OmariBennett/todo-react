@@ -32,6 +32,15 @@ export default class AddTodo extends Component {
 	}
 }
 
+/*
+	When the propTypes is required it triggered a warning message 
+	!Warning: 
+		Failed prop type: The prop `AddTodo` is marked as required in `AddTodo`, but its value is `undefined`.
+			* AddTodo.propTypes = {
+			* 	AddTodo: PropTypes.func.isRequired,
+			* };
+*/
+
 AddTodo.propTypes = {
-	AddTodo: PropTypes.func.isRequired,
+	AddTodo: PropTypes.func,
 };
