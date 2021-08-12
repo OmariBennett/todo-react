@@ -12,6 +12,7 @@ export default class App extends Component {
 			<Router>
 				<div>
 					<Header />
+					<h1>Test</h1>
 					<Route exact path='/' render={(props) => <h1>Hello World!</h1>} />
 					<Route path='/about' component={About} />
 					<Route exact path='/todo' component={TodoApp} />
